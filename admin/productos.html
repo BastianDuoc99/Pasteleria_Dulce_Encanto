@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Productos | Admin Dulce Encanto
+  </title>
+  <link href="css/admin.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="admin">
+   <aside class="sidebar">
+    <div class="logo">
+     <img alt="Dulce Encanto" src="../assets/img/logo.svg"/>
+    </div>
+    <a class="side-link active" href="index.html">
+     🏠
+     <span class="text">
+      Inicio
+     </span>
+    </a>
+    <a class="side-link" href="productos.html">
+     🍰
+     <span class="text">
+      Productos
+     </span>
+    </a>
+    <a class="side-link" href="usuarios.html">
+     👤
+     <span class="text">
+      Usuarios
+     </span>
+    </a>
+    <a class="side-link" href="../productos.html">
+     🛍️
+     <span class="text">
+      Ver tienda
+     </span>
+    </a>
+   </aside>
+   <main class="main">
+    <div class="top">
+     <div>
+      <h1>
+       Productos
+      </h1>
+      <p>
+       Listado de productos disponibles.
+      </p>
+     </div>
+     <a class="btn" href="producto-form.html">
+      + Nuevo producto
+     </a>
+    </div>
+    <div class="card table-wrap">
+     <table class="table">
+      <thead>
+       <tr>
+        <th>
+         C&oacute;digo
+        </th>
+        <th>
+         Nombre
+        </th>
+        <th>
+         Categor&iacute;a
+        </th>
+        <th>
+         Precio
+        </th>
+        <th>
+         Acciones
+        </th>
+       </tr>
+      </thead>
+      <tbody id="adminProducts">
+      </tbody>
+     </table>
+    </div>
+   </main>
+  </div>
+  <script src="../js/data.js">
+  </script>
+  <script src="js/admin.js">
+  </script>
+ </body>
+</html>

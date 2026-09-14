@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 150">
+  <rect width="500" height="150" rx="30" fill="#fff5e1"/>
+  <circle cx="75" cy="75" r="48" fill="#ffc0cb"/>
+  <path d="M45 78h60M55 62h40M58 94h34" stroke="#8b4513" stroke-width="8" stroke-linecap="round"/>
+  <text x="140" y="72" font-family="Arial,sans-serif" font-size="34" font-weight="700" fill="#5d4037">PASTELERÍA</text>
+  <text x="140" y="110" font-family="Arial,sans-serif" font-size="26" fill="#8b4513">DULCE ENCANTO</text>
+</svg>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Inicio | Admin Dulce Encanto
+  </title>
+  <link href="css/admin.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="admin">
+   <aside class="sidebar">
+    <div class="logo">
+     <img alt="Dulce Encanto" src="../assets/img/logo.svg"/>
+    </div>
+    <a class="side-link active" href="index.html">
+     🏠
+     <span class="text">
+      Inicio
+     </span>
+    </a>
+    <a class="side-link" href="productos.html">
+     🍰
+     <span class="text">
+      Productos
+     </span>
+    </a>
+    <a class="side-link" href="usuarios.html">
+     👤
+     <span class="text">
+      Usuarios
+     </span>
+    </a>
+    <a class="side-link" href="../productos.html">
+     🛍️
+     <span class="text">
+      Ver tienda
+     </span>
+    </a>
+   </aside>
+   <main class="main">
+    <div class="top">
+     <div>
+      <h1>
+       &iexcl;Hola, Administrador!
+      </h1>
+      <p>
+       Panel de gesti&oacute;n de Pasteler&iacute;a Dulce Encanto.
+      </p>
+     </div>
+     <a class="btn secondary" href="../index.html">
+      Ir a tienda
+     </a>
+    </div>
+    <div class="stats">
+     <div class="card stat">
+      <span>
+       Productos
+      </span>
+      <br/>
+      <b id="statProducts">
+       16
+      </b>
+     </div>
+     <div class="card stat">
+      <span>
+       Categor&iacute;as
+      </span>
+      <br/>
+      <b id="statCategories">
+       8
+      </b>
+     </div>
+     <div class="card stat">
+      <span>
+       Carrito actual
+      </span>
+      <br/>
+      <b id="statCart">
+       0
+      </b>
+     </div>
+    </div>
+    <section class="card" style="margin-top:20px">
+     <h2>
+      Resumen
+     </h2>
+     <p>
+      Desde este panel puedes visualizar y mantener productos y usuarios.
+     </p>
+    </section>
+   </main>
+  </div>
+  <script src="../js/data.js">
+  </script>
+  <script src="js/admin.js">
+  </script>
+ </body>
+</html>

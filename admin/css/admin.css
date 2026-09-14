@@ -1,0 +1,155 @@
+* {
+  box-sizing:border-box
+}
+body {
+  margin:0;
+  font-family:Lato,Arial,sans-serif;
+  background:#f7f3ee;
+  color:#5D4037
+}
+a {
+  text-decoration:none;
+  color:inherit
+}
+.admin {
+  display:flex;
+  min-height:100vh
+}
+.sidebar {
+  width:245px;
+  background:#4e342e;
+  color:#fff;
+  padding:22px;
+  position:fixed;
+  inset:0 auto 0 0
+}
+.sidebar .logo {
+  background:#fff5e1;
+  border-radius:12px;
+  padding:8px;
+  margin-bottom:25px
+}
+.sidebar img {
+  width:100%
+}
+.side-link {
+  display:block;
+  padding:12px;
+  border-radius:10px;
+  margin:5px 0
+}
+.side-link:hover,.side-link.active {
+  background:#8b4513
+}
+.main {
+  margin-left:245px;
+  flex:1;
+  padding:28px
+}
+.top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px
+}
+.card {
+  background:#fff;
+  border-radius:16px;
+  padding:20px;
+  box-shadow:0 5px 20px #5d403714
+}
+.stats {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px
+}
+.stat b {
+  font-size:2rem;
+  color:#8b4513
+}
+.table-wrap {
+  overflow:auto
+}
+.table {
+  width:100%;
+  border-collapse:collapse
+}
+.table th,.table td {
+  padding:12px;
+  border-bottom:1px solid #eee;
+  text-align:left
+}
+.table th {
+  background:#f4e7da
+}
+.btn {
+  display:inline-block;
+  border:0;
+  background:#8b4513;
+  color:#fff;
+  padding:10px 15px;
+  border-radius:10px;
+  cursor:pointer
+}
+.btn.secondary {
+  background:#ffc0cb;
+  color:#5d4037
+}
+.actions {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap
+}
+.form-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px
+}
+.field {
+  display:flex;
+  flex-direction:column;
+  gap:5px
+}
+.full {
+  grid-column:1/-1
+}
+.field input,.field select,.field textarea {
+  padding:11px;
+  border:1px solid #d8cabe;
+  border-radius:9px;
+  font:inherit
+}
+.field textarea {
+  min-height:120px
+}
+.error {
+  color:#b3261e;
+  font-size:.85rem
+}
+.success {
+  background:#e6f4ea;
+  padding:12px;
+  border-radius:9px;
+  margin-bottom:15px
+}
+@media(max-width:800px) {
+  .sidebar {
+    width:70px;
+    padding:10px
+  }
+  .sidebar .text {
+    display:none
+  }
+  .main {
+    margin-left:70px
+  }
+  .stats {
+    grid-template-columns:1fr
+  }
+  .form-grid {
+    grid-template-columns:1fr
+  }
+  .full {
+    grid-column:auto
+  }
+}

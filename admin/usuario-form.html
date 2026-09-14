@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Nuevo usuario | Admin Dulce Encanto
+  </title>
+  <link href="css/admin.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="admin">
+   <aside class="sidebar">
+    <div class="logo">
+     <img alt="Dulce Encanto" src="../assets/img/logo.svg"/>
+    </div>
+    <a class="side-link active" href="index.html">
+     🏠
+     <span class="text">
+      Inicio
+     </span>
+    </a>
+    <a class="side-link" href="productos.html">
+     🍰
+     <span class="text">
+      Productos
+     </span>
+    </a>
+    <a class="side-link" href="usuarios.html">
+     👤
+     <span class="text">
+      Usuarios
+     </span>
+    </a>
+    <a class="side-link" href="../productos.html">
+     🛍️
+     <span class="text">
+      Ver tienda
+     </span>
+    </a>
+   </aside>
+   <main class="main">
+    <div class="top">
+     <div>
+      <h1>
+       Nuevo usuario
+      </h1>
+      <p>
+       Formulario de creaci&oacute;n/edici&oacute;n de usuario.
+      </p>
+     </div>
+     <a class="btn secondary" href="usuarios.html">
+      Volver
+     </a>
+    </div>
+    <div class="card">
+     <form id="adminUserForm">
+      <div class="form-grid">
+       <div class="field">
+        <label>
+         RUN *
+        </label>
+        <input name="run" required=""/>
+       </div>
+       <div class="field">
+        <label>
+         Nombre *
+        </label>
+        <input maxlength="50" name="nombre" required=""/>
+       </div>
+       <div class="field">
+        <label>
+         Apellidos *
+        </label>
+        <input maxlength="100" name="apellidos" required=""/>
+       </div>
+       <div class="field">
+        <label>
+         Correo *
+        </label>
+        <input maxlength="100" name="correo" required=""/>
+       </div>
+       <div class="field">
+        <label>
+         Fecha nacimiento
+        </label>
+        <input name="fecha" type="date"/>
+       </div>
+       <div class="field">
+        <label>
+         Tipo de usuario *
+        </label>
+        <select name="tipo">
+         <option>
+          Administrador
+         </option>
+         <option>
+          Cliente
+         </option>
+         <option>
+          Vendedor
+         </option>
+        </select>
+       </div>
+       <div class="field">
+        <label>
+         Regi&oacute;n
+        </label>
+        <select name="region">
+         <option>
+          Regi&oacute;n Metropolitana
+         </option>
+         <option>
+          Valpara&iacute;so
+         </option>
+         <option>
+          Biob&iacute;o
+         </option>
+        </select>
+       </div>
+       <div class="field">
+        <label>
+         Comuna
+        </label>
+        <select name="comuna">
+         <option>
+          Santiago
+         </option>
+         <option>
+          Puente Alto
+         </option>
+         <option>
+          Maip&uacute;
+         </option>
+        </select>
+       </div>
+       <div class="field full">
+        <label>
+         Direcci&oacute;n *
+        </label>
+        <input maxlength="300" name="direccion" required=""/>
+       </div>
+       <div class="field full">
+        <button class="btn" type="submit">
+         Guardar usuario
+        </button>
+       </div>
+      </div>
+     </form>
+    </div>
+   </main>
+  </div>
+  <script src="../js/data.js">
+  </script>
+  <script src="js/admin.js">
+  </script>
+ </body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Contacto | Pasteler&iacute;a Dulce Encanto
+  </title>
+  <link href="css/styles.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="topbar">
+   50 a&ntilde;os celebrando la reposter&iacute;a chilena &middot; Promociones especiales
+  </div>
+  <nav class="navbar">
+   <div class="container nav-inner">
+    <a class="brand" href="index.html">
+     <img alt="Pasteler&iacute;a Dulce Encanto" src="assets/img/logo.svg"/>
+    </a>
+    <button class="menu-toggle">
+     ☰
+    </button>
+    <div class="navlinks">
+     <a class="" href="index.html">
+      Inicio
+     </a>
+     <a class="" href="productos.html">
+      Productos
+     </a>
+     <a class="" href="nosotros.html">
+      Nosotros
+     </a>
+     <a class="" href="blogs.html">
+      Blogs
+     </a>
+     <a class="active" href="contacto.html">
+      Contacto
+     </a>
+     <a class="" href="login.html">
+      Ingresar
+     </a>
+     <a class="cart-btn" href="carrito.html">
+      🛒 Carrito
+      <span class="cart-count">
+       0
+      </span>
+     </a>
+    </div>
+   </div>
+  </nav>
+  <main>
+   <section class="page-title">
+    <div class="container">
+     <span class="eyebrow">
+      Atenci&oacute;n al cliente
+     </span>
+     <h1>
+      Contacto
+     </h1>
+     <p>
+      Env&iacute;anos tu mensaje y te contactaremos.
+     </p>
+    </div>
+   </section>
+   <section class="section" style="padding-top:10px">
+    <div class="container form-wrap">
+     <div class="success" hidden="" id="contactSuccess">
+     </div>
+     <form id="contactForm" novalidate="">
+      <div class="form-grid">
+       <div class="field">
+        <label>
+         Nombre *
+        </label>
+        <input maxlength="100" name="nombre"/>
+        <span class="error" id="nombreError">
+        </span>
+       </div>
+       <div class="field">
+        <label>
+         Correo
+        </label>
+        <input maxlength="100" name="correo" type="email"/>
+        <span class="error" id="correoError">
+        </span>
+       </div>
+       <div class="field full">
+        <label>
+         Comentario *
+        </label>
+        <textarea maxlength="500" name="comentario"></textarea>
+        <span class="error" id="comentarioError">
+        </span>
+       </div>
+       <div class="field full">
+        <button class="btn" type="submit">
+         Enviar mensaje
+        </button>
+       </div>
+      </div>
+     </form>
+    </div>
+   </section>
+  </main>
+  <footer>
+   <div class="container footer-grid">
+    <div>
+     <img alt="Logo" src="assets/img/logo.svg" style="width:210px;border-radius:12px"/>
+     <p>
+      Tradici&oacute;n, calidad e innovaci&oacute;n en reposter&iacute;a chilena. Celebramos nuestra historia y apoyamos la formaci&oacute;n de nuevos talentos en gastronom&iacute;a.
+     </p>
+    </div>
+    <div>
+     <h3>
+      Enlaces
+     </h3>
+     <p>
+      <a href="productos.html">
+       Productos
+      </a>
+     </p>
+     <p>
+      <a href="blogs.html">
+       Blogs
+      </a>
+     </p>
+     <p>
+      <a href="contacto.html">
+       Contacto
+      </a>
+     </p>
+    </div>
+    <div>
+     <h3>
+      Comunidad
+     </h3>
+     <p>
+      Las compras apoyan a estudiantes de gastronom&iacute;a y a la comunidad local.
+     </p>
+     <div class="social">
+      <span>
+       📷
+      </span>
+      <span>
+       📘
+      </span>
+      <span>
+       ▶️
+      </span>
+     </div>
+    </div>
+   </div>
+   <div class="container footer-bottom">
+    &copy;
+    <span id="year">
+    </span>
+    Pasteler&iacute;a Dulce Encanto
+   </div>
+  </footer>
+  <script src="js/data.js">
+  </script>
+  <script src="js/main.js">
+  </script>
+  <script src="js/validaciones.js">
+  </script>
+ </body>
+</html>

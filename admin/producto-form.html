@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Nuevo producto | Admin Dulce Encanto
+  </title>
+  <link href="css/admin.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="admin">
+   <aside class="sidebar">
+    <div class="logo">
+     <img alt="Dulce Encanto" src="../assets/img/logo.svg"/>
+    </div>
+    <a class="side-link active" href="index.html">
+     🏠
+     <span class="text">
+      Inicio
+     </span>
+    </a>
+    <a class="side-link" href="productos.html">
+     🍰
+     <span class="text">
+      Productos
+     </span>
+    </a>
+    <a class="side-link" href="usuarios.html">
+     👤
+     <span class="text">
+      Usuarios
+     </span>
+    </a>
+    <a class="side-link" href="../productos.html">
+     🛍️
+     <span class="text">
+      Ver tienda
+     </span>
+    </a>
+   </aside>
+   <main class="main">
+    <div class="top">
+     <div>
+      <h1>
+       Nuevo producto
+      </h1>
+      <p>
+       Formulario de creaci&oacute;n/edici&oacute;n de producto.
+      </p>
+     </div>
+     <a class="btn secondary" href="productos.html">
+      Volver
+     </a>
+    </div>
+    <div class="card">
+     <div class="success" hidden="" id="productSuccess">
+     </div>
+     <form id="adminProductForm">
+      <div class="form-grid">
+       <div class="field">
+        <label>
+         C&oacute;digo producto *
+        </label>
+        <input minlength="3" name="codigo" required=""/>
+       </div>
+       <div class="field">
+        <label>
+         Nombre *
+        </label>
+        <input maxlength="100" name="nombre" required=""/>
+       </div>
+       <div class="field full">
+        <label>
+         Descripci&oacute;n
+        </label>
+        <textarea maxlength="500" name="descripcion"></textarea>
+       </div>
+       <div class="field">
+        <label>
+         Precio *
+        </label>
+        <input min="0" name="precio" required="" step="0.01" type="number"/>
+       </div>
+       <div class="field">
+        <label>
+         Stock *
+        </label>
+        <input min="0" name="stock" required="" step="1" type="number"/>
+       </div>
+       <div class="field">
+        <label>
+         Stock cr&iacute;tico
+        </label>
+        <input min="0" name="critico" step="1" type="number"/>
+       </div>
+       <div class="field">
+        <label>
+         Categor&iacute;a *
+        </label>
+        <select name="categoria" required="">
+        </select>
+       </div>
+       <div class="field">
+        <label>
+         Imagen
+        </label>
+        <input name="imagen" placeholder="URL o ruta local" type="text"/>
+       </div>
+       <div class="field full">
+        <button class="btn" type="submit">
+         Guardar producto
+        </button>
+       </div>
+      </div>
+     </form>
+    </div>
+   </main>
+  </div>
+  <script src="../js/data.js">
+  </script>
+  <script src="js/admin.js">
+  </script>
+ </body>
+</html>
