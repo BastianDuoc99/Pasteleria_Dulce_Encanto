@@ -32,7 +32,7 @@
       Usuarios
      </span>
     </a>
-    <a class="side-link" href="../productos.html">
+    <a class="side-link" href="../usuario/productos.html">
      🛍️
      <span class="text">
       Ver tienda
@@ -56,51 +56,58 @@
     <div class="card">
      <div class="success" hidden="" id="productSuccess">
      </div>
-     <form id="adminProductForm">
+      <form id="adminProductForm" novalidate="">
       <div class="form-grid">
        <div class="field">
         <label>
          C&oacute;digo producto *
         </label>
-        <input minlength="3" name="codigo" required=""/>
-       </div>
+         <input minlength="3" name="codigo" required=""/>
+         <span class="error" id="codigoError"></span>
+        </div>
        <div class="field">
         <label>
          Nombre *
         </label>
-        <input maxlength="100" name="nombre" required=""/>
-       </div>
+         <input maxlength="100" name="nombre" required=""/>
+         <span class="error" id="nombreError"></span>
+        </div>
        <div class="field full">
         <label>
          Descripci&oacute;n
         </label>
-        <textarea maxlength="500" name="descripcion"></textarea>
-       </div>
+         <textarea maxlength="500" name="descripcion"></textarea>
+         <span class="error" id="descripcionError"></span>
+        </div>
        <div class="field">
         <label>
          Precio *
         </label>
-        <input min="0" name="precio" required="" step="0.01" type="number"/>
-       </div>
+         <input min="0" name="precio" required="" step="0.01" type="number"/>
+         <span class="error" id="precioError"></span>
+        </div>
        <div class="field">
         <label>
          Stock *
         </label>
-        <input min="0" name="stock" required="" step="1" type="number"/>
-       </div>
+         <input min="0" name="stock" required="" step="1" type="number"/>
+         <span class="error" id="stockError"></span>
+        </div>
        <div class="field">
         <label>
          Stock cr&iacute;tico
         </label>
-        <input min="0" name="critico" step="1" type="number"/>
-       </div>
+         <input min="0" name="critico" step="1" type="number"/>
+         <span class="error" id="criticoError"></span>
+        </div>
        <div class="field">
         <label>
          Categor&iacute;a *
         </label>
-        <select name="categoria" required="">
-        </select>
-       </div>
+         <select name="categoria" required="">
+         </select>
+         <span class="error" id="categoriaError"></span>
+        </div>
        <div class="field">
         <label>
          Imagen
@@ -117,9 +124,11 @@
     </div>
    </main>
   </div>
-  <script src="../js/data.js">
-  </script>
-  <script src="js/admin.js">
-  </script>
+<script src="../js/data.js">
+   </script>
+   <script src="js/admin.js">
+   </script>
+   <script src="../js/validaciones.js">
+   </script>
  </body>
 </html>

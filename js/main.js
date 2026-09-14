@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const $ = (s, c = document) => c.querySelector(s);
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
-  const cartKey = "milSaboresCart";
+  const cartKey = "dulceEncantoCart";
+  const MAX_UNIDADES_POR_PRODUCTO = 10;
 
   function getCart() {
     return JSON.parse(localStorage.getItem(cartKey) || "[]");
@@ -18,20 +19,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   window.agregarAlCarrito = function (codigo) {
-    const p = PRODUCTOS.find((x) => x.codigo === codigo);
+    const p = getProductos().find((x) => x.codigo === codigo);
     if (!p) return;
 
     const c = getCart();
     const item = c.find((x) => x.codigo === codigo);
 
     if (item) {
+      if (item.qty >= MAX_UNIDADES_POR_PRODUCTO) {
+        toast(
+          `Máximo ${MAX_UNIDADES_POR_PRODUCTO} unidades de ${p.nombre} por pedido.`
+        );
+        return;
+      }
       item.qty++;
     } else {
       c.push({ ...p, qty: 1 });
     }
 
     saveCart(c);
-    toast(`${p.nombre} fue añadido al carrito`);
+    toast(`${p.nombre} fue añadido al carrito.`);
   };
 
   window.toast = function (msg) {
@@ -73,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const q = (search.value || "").toLowerCase();
       const cv = cat.value;
 
-      const list = PRODUCTOS.filter(
+      const list = getProductos().filter(
         (p) =>
           (!q ||
             `${p.nombre} ${p.descripcion} ${p.codigo}`
@@ -97,7 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const featured = $("#featuredProducts");
 
   if (featured) {
-    featured.innerHTML = PRODUCTOS.slice(0, 8)
+    featured.innerHTML = getProductos()
+      .slice(0, 8)
       .map(productCard)
       .join("");
   }
@@ -107,15 +115,18 @@ document.addEventListener("DOMContentLoaded", () => {
       <article class="card">
         <a href="producto-detalle.html?codigo=${p.codigo}">
           <div class="product-art">
-            <img src="${p.imagen}" alt="${p.nombre}">
+            <img
+              src="${p.imagen || "../assets/img/Pasteleria.jpg"}"
+              alt="${p.nombre}"
+            >
           </div>
         </a>
         <div class="card-body">
           <span class="pill">${p.categoria}</span>
           <h3>${p.nombre}</h3>
-          <p class="muted">${p.descripcion.slice(0, 100)}…</p>
+          <p class="muted">${(p.descripcion || "").slice(0, 100)}…</p>
           <div class="price">
-            $${p.precio.toLocaleString("es-CL")} CLP
+            $${Number(p.precio || 0).toLocaleString("es-CL")} CLP
           </div>
           <div class="actions">
             <a
@@ -142,11 +153,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const code =
       new URLSearchParams(location.search).get("codigo") || "TC001";
 
-    const p = PRODUCTOS.find((x) => x.codigo === code) || PRODUCTOS[0];
+    const p =
+      getProductos().find((x) => x.codigo === code) ||
+      getProductos()[0];
 
     detail.innerHTML = `
       <div class="detail-art">
-        <img src="${p.imagen}" alt="${p.nombre}">
+        <img
+          src="${p.imagen || "../assets/img/Pasteleria.jpg"}"
+          alt="${p.nombre}"
+        >
       </div>
       <div>
         <span class="pill">${p.categoria}</span>
@@ -154,9 +170,9 @@ document.addEventListener("DOMContentLoaded", () => {
           ${p.nombre}
         </h1>
         <p class="price" style="font-size:1.6rem">
-          $${p.precio.toLocaleString("es-CL")} CLP
+          $${Number(p.precio || 0).toLocaleString("es-CL")} CLP
         </p>
-        <p>${p.descripcion}</p>
+        <p>${p.descripcion || "Producto de Pastelería Dulce Encanto."}</p>
         <div class="notice">
           <strong>Personalización:</strong>
           las tortas pueden incorporar mensajes especiales según el
@@ -230,31 +246,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
       $("#cartTotal").textContent =
         "$" +
-        c.reduce((s, p) => s + p.precio * p.qty, 0).toLocaleString("es-CL") +
+        c
+          .reduce((s, p) => s + p.precio * p.qty, 0)
+          .toLocaleString("es-CL") +
         " CLP";
     }
-  }
 
-  window.changeQty = (code, d) => {
-    let c = getCart();
-    const i = c.find((x) => x.codigo === code);
+    window.changeQty = (code, d) => {
+      const c = getCart();
+      const i = c.find((x) => x.codigo === code);
 
-    if (i) {
-      i.qty += d;
+      if (!i) return;
 
-      if (i.qty <= 0) {
-        c = c.filter((x) => x.codigo !== code);
+      const nuevo = i.qty + d;
+
+      if (nuevo > MAX_UNIDADES_POR_PRODUCTO) {
+        toast(
+          `Máximo ${MAX_UNIDADES_POR_PRODUCTO} unidades de ${i.nombre} por pedido.`
+        );
+        return;
       }
-    }
 
-    saveCart(c);
-    location.reload();
-  };
+      if (nuevo <= 0) {
+        window.removeItem(code);
+        return;
+      }
 
-  window.removeItem = (code) => {
-    saveCart(getCart().filter((x) => x.codigo !== code));
-    location.reload();
-  };
+      i.qty = nuevo;
+      saveCart(c);
+      renderCart();
+    };
+
+    window.removeItem = (code) => {
+      saveCart(getCart().filter((x) => x.codigo !== code));
+      renderCart();
+    };
+  }
 
   const year = $("#year");
 

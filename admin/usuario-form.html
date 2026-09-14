@@ -32,7 +32,7 @@
       Usuarios
      </span>
     </a>
-    <a class="side-link" href="../productos.html">
+    <a class="side-link" href="../usuario/productos.html">
      🛍️
      <span class="text">
       Ver tienda
@@ -54,32 +54,36 @@
      </a>
     </div>
     <div class="card">
-     <form id="adminUserForm">
+     <form id="adminUserForm" novalidate="">
       <div class="form-grid">
        <div class="field">
         <label>
          RUN *
         </label>
-        <input name="run" required=""/>
-       </div>
+<input name="run" required=""/>
+         <span class="error" id="runError"></span>
+        </div>
        <div class="field">
         <label>
          Nombre *
         </label>
-        <input maxlength="50" name="nombre" required=""/>
-       </div>
+<input maxlength="50" name="nombre" required=""/>
+         <span class="error" id="nombreError"></span>
+        </div>
        <div class="field">
         <label>
          Apellidos *
         </label>
-        <input maxlength="100" name="apellidos" required=""/>
-       </div>
+<input maxlength="100" name="apellidos" required=""/>
+         <span class="error" id="apellidoError"></span>
+        </div>
        <div class="field">
         <label>
          Correo *
         </label>
-        <input maxlength="100" name="correo" required=""/>
-       </div>
+<input maxlength="100" name="correo" required=""/>
+         <span class="error" id="correoError"></span>
+        </div>
        <div class="field">
         <label>
          Fecha nacimiento
@@ -138,8 +142,9 @@
         <label>
          Direcci&oacute;n *
         </label>
-        <input maxlength="300" name="direccion" required=""/>
-       </div>
+<input maxlength="300" name="direccion" required=""/>
+         <span class="error" id="direccionError"></span>
+        </div>
        <div class="field full">
         <button class="btn" type="submit">
          Guardar usuario
@@ -150,9 +155,11 @@
     </div>
    </main>
   </div>
-  <script src="../js/data.js">
-  </script>
-  <script src="js/admin.js">
-  </script>
+<script src="../js/data.js">
+   </script>
+   <script src="js/admin.js">
+   </script>
+   <script src="../js/validaciones.js">
+   </script>
  </body>
 </html>
